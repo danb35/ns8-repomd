@@ -27,7 +27,7 @@ api-cli run add-repository --data '{"name":"danb35","url":"https://danb35.github
 Each top-level directory is one module; its name is the module id and the image name under
 `ghcr.io/danb35/`. A directory holds:
 
-- `logo.png` (128×128 PNG),
+- `logo.png` (256×256 PNG; `logo.svg` is its source),
 - optionally `screenshots/*.png`, shown in name order,
 - optionally `metadata.json`; normally it is **not** committed here but fetched at build time from
   the module's repository (`danb35/ns8-<id>`, branch `master`, `ui/public/metadata.json`), so a
