@@ -1,0 +1,68 @@
+name: repomd
+
+# Builds repodata.json from the module directories and the images'
+# published tags, then publishes it with GitHub Pages. Runs on push, on a
+# schedule (so a new module release shows up without a commit here), by
+# hand, and on a "module-released" repository_dispatch event.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [module-released]
+  schedule:
+    - cron: '25 */6 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install semver==3.0.1 filetype PyYAML
+          skopeo --version
+
+      - name: Build repository metadata
+        run: python3 createrepo.py
+
+      - name: Assemble site
+        run: |
+          mkdir _site
+          cp repodata.json index.html _site/
+          for dir in */; do
+            case "$dir" in _site/) continue ;; esac
+            cp -a "$dir" _site/
+          done
+          python3 -c "import json; d=json.load(open('_site/repodata.json')); print('\n'.join(f\"{m['id']}: {', '.join(v['tag'] for v in m['versions'])}\" for m in d))" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

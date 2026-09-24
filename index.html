@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>danb35 NS8 modules</title>
+<style>
+  :root { color-scheme: light dark; --fg: #1b1b1b; --bg: #fff; --muted: #555; --code: #f2f2f2; }
+  @media (prefers-color-scheme: dark) { :root { --fg: #e8e8e8; --bg: #161616; --muted: #aaa; --code: #262626; } }
+  body { font: 16px/1.5 system-ui, sans-serif; color: var(--fg); background: var(--bg); max-width: 44rem; margin: 2rem auto; padding: 0 16px; }
+  code { background: var(--code); padding: .1em .3em; border-radius: 3px; overflow-wrap: anywhere; }
+  .muted { color: var(--muted); }
+</style>
+</head>
+<body>
+<h1>danb35 NS8 modules</h1>
+<p>A NethServer 8 software repository. To use it, open the cluster admin UI,
+go to <b>Software center &rarr; Settings &rarr; Software repositories &rarr; Add repository</b>, and enter:</p>
+<p><code id="url">https://danb35.github.io/ns8-repomd/</code></p>
+<ul id="modules"><li class="muted">Loading module list&hellip;</li></ul>
+<p class="muted">Source: <a href="https://github.com/danb35/ns8-repomd">github.com/danb35/ns8-repomd</a></p>
+<script>
+  document.getElementById('url').textContent = new URL('.', location.href).href;
+  fetch('repodata.json').then(r => r.json()).then(mods => {
+    const ul = document.getElementById('modules');
+    ul.replaceChildren(...mods.map(m => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = m.docs.code_url; a.textContent = m.name;
+      li.append(a, ` ${m.versions.map(v => v.tag).join(', ')} — ${m.description.en}`);
+      return li;
+    }));
+  }).catch(() => { document.getElementById('modules').innerHTML = ''; });
+</script>
+</body>
+</html>

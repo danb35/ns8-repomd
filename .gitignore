@@ -1,0 +1,4 @@
+/repodata.json
+/_site/
+# fetched from the module repositories at build time
+/*/metadata.json
