@@ -21,7 +21,9 @@ go to <b>Software center &rarr; Settings &rarr; Software repositories &rarr; Add
 <p class="muted">Source: <a href="https://github.com/danb35/ns8-repomd">github.com/danb35/ns8-repomd</a></p>
 <script>
   document.getElementById('url').textContent = new URL('.', location.href).href;
-  fetch('repodata.json').then(r => r.json()).then(mods => {
+  // Pages lets browsers cache files for 10 minutes; revalidate so a new
+  // release shows as soon as it is published.
+  fetch('repodata.json', { cache: 'no-cache' }).then(r => r.json()).then(mods => {
     const ul = document.getElementById('modules');
     ul.replaceChildren(...mods.map(m => {
       const li = document.createElement('li');
