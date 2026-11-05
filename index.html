@@ -15,9 +15,14 @@
 <body>
 <h1>danb35 NS8 modules</h1>
 <p>A NethServer 8 software repository. To use it, open the cluster admin UI,
-go to <b>Software center &rarr; Settings &rarr; Software repositories &rarr; Add repository</b>, and enter:</p>
+go to <b>Settings &rarr; Software repositories &rarr; Add repository</b>, and enter:</p>
 <p><code id="url">https://danb35.github.io/ns8-repomd/</code></p>
 <ul id="modules"><li class="muted">Loading module list&hellip;</li></ul>
+<p><b><a href="https://github.com/danb35/ns8-dnshelper">dnshelper</a> has moved to
+<a href="https://github.com/NethServer/ns8-nethforge">NethForge</a></b> and is no longer listed here.
+Every NS8 cluster already has the NethForge repository, disabled by default: go to
+<b>Settings &rarr; Software repositories</b> and enable <code>nethforge</code>. An installed dnshelper
+keeps running and needs no reinstall; it is offered updates again once NethForge is enabled.</p>
 <p class="muted">Source: <a href="https://github.com/danb35/ns8-repomd">github.com/danb35/ns8-repomd</a></p>
 <script>
   document.getElementById('url').textContent = new URL('.', location.href).href;

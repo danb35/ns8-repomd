@@ -2,13 +2,17 @@
 
 A [NethServer 8](https://www.nethserver.org) software repository for:
 
-- [dnshelper](https://github.com/danb35/ns8-dnshelper): manage DNS records through DNS provider APIs, for other modules
 - [automx](https://github.com/danb35/ns8-automx): email client autoconfiguration for NS8 mail domains
+
+**[dnshelper](https://github.com/danb35/ns8-dnshelper) has moved to
+[NethForge](https://github.com/NethServer/ns8-nethforge)** and is no longer listed here. Every NS8
+cluster already has the NethForge repository, disabled by default: in the cluster admin UI, open
+**Settings → Software repositories** and enable `nethforge`. An installed dnshelper keeps running and
+needs no reinstall; it is offered updates again once NethForge is enabled.
 
 ## Using the repository
 
-In the cluster admin UI, open **Software center → Settings → Software repositories → Add repository**
-and enter:
+In the cluster admin UI, open **Settings → Software repositories → Add repository** and enter:
 
 ```
 https://danb35.github.io/ns8-repomd/
