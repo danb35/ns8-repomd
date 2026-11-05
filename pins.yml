@@ -3,6 +3,6 @@
 #   - { tag: 1.2.3, prepend: False }   always list this tag
 #   - { match: "1.2.4", remove: True } hide this tag
 # Example:
-# dnshelper:
+# automx:
 #   - { match: "0.2.1", remove: True }
 {}
