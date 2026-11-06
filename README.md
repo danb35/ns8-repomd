@@ -3,6 +3,7 @@
 A [NethServer 8](https://www.nethserver.org) software repository for:
 
 - [automx](https://github.com/danb35/ns8-automx): email client autoconfiguration for NS8 mail domains
+- [powerdns](https://github.com/danb35/ns8-powerdns): authoritative DNS server with DNSSEC and cluster replication
 
 **[dnshelper](https://github.com/danb35/ns8-dnshelper) has moved to
 [NethForge](https://github.com/NethServer/ns8-nethforge)** and is no longer listed here. Every NS8
