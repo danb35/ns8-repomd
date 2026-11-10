@@ -2,14 +2,13 @@
 
 A [NethServer 8](https://www.nethserver.org) software repository for:
 
-- [automx](https://github.com/danb35/ns8-automx): email client autoconfiguration for NS8 mail domains
 - [powerdns](https://github.com/danb35/ns8-powerdns): authoritative DNS server with DNSSEC and cluster replication
 
-**[dnshelper](https://github.com/danb35/ns8-dnshelper) has moved to
-[NethForge](https://github.com/NethServer/ns8-nethforge)** and is no longer listed here. Every NS8
-cluster already has the NethForge repository, disabled by default: in the cluster admin UI, open
-**Settings → Software repositories** and enable `nethforge`. An installed dnshelper keeps running and
-needs no reinstall; it is offered updates again once NethForge is enabled.
+**[dnshelper](https://github.com/danb35/ns8-dnshelper) and [automx](https://github.com/danb35/ns8-automx)
+have moved to [NethForge](https://github.com/NethServer/ns8-nethforge)** and are no longer listed
+here. Every NS8 cluster already has the NethForge repository, disabled by default: in the cluster
+admin UI, open **Settings → Software repositories** and enable `nethforge`. An installed dnshelper or
+automx keeps running and needs no reinstall; it is offered updates again once NethForge is enabled.
 
 ## Using the repository
 
