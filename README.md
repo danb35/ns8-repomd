@@ -3,6 +3,10 @@
 A [NethServer 8](https://www.nethserver.org) software repository for:
 
 - [powerdns](https://github.com/danb35/ns8-powerdns): authoritative DNS server with DNSSEC and cluster replication
+- [dnsapi](https://github.com/danb35/ns8-dnsapi): an HTTPS API for managing DNS records from
+  outside the cluster (billing portals, customers' scripts, ACME DNS-01), through dnshelper.
+  Testing releases only for now: turn on **Testing** for this repository to see it. It needs
+  [dnshelper](https://github.com/danb35/ns8-dnshelper) 0.7.0 or later, from NethForge.
 
 **[dnshelper](https://github.com/danb35/ns8-dnshelper) and [automx](https://github.com/danb35/ns8-automx)
 have moved to [NethForge](https://github.com/NethServer/ns8-nethforge)** and are no longer listed
