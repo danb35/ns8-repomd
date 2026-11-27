@@ -1,0 +1,20 @@
+{
+  "name": "theme",
+  "description": {
+    "en": "Dark mode and theme switcher for the cluster-admin web interface"
+  },
+  "categories": [
+    "system_administration"
+  ],
+  "authors": [
+    {
+      "name": "Dan Brown"
+    }
+  ],
+  "docs": {
+    "documentation_url": "https://github.com/danb35/ns8-theme#readme",
+    "bug_url": "https://github.com/danb35/ns8-theme/issues",
+    "code_url": "https://github.com/danb35/ns8-theme"
+  },
+  "source": "ghcr.io/danb35/theme"
+}

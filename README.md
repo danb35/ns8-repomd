@@ -7,6 +7,8 @@ A [NethServer 8](https://www.nethserver.org) software repository for:
   customers' scripts and ACME DNS-01 clients manage DNS records through dnshelper.
   Testing releases only for now: turn on **Testing** for this repository to see it. It needs
   [dnshelper](https://github.com/danb35/ns8-dnshelper) 0.7.0 or later, from NethForge.
+- [theme](https://github.com/danb35/ns8-theme): dark mode and a Light / Dark / System switcher
+  for the cluster-admin web interface, app pages included. Install it on the leader node.
 
 **[dnshelper](https://github.com/danb35/ns8-dnshelper) and [automx](https://github.com/danb35/ns8-automx)
 have moved to [NethForge](https://github.com/NethServer/ns8-nethforge)** and are no longer listed

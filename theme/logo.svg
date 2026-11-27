@@ -1,0 +1,10 @@
+<!-- ns8-theme logo source. Rendered to module_default_logo.png (128x128). -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs><clipPath id="t"><rect width="128" height="128" rx="8"/></clipPath></defs>
+  <g clip-path="url(#t)">
+    <rect width="128" height="128" fill="#00a2de"/>
+    <path d="M128 0V128H0Z" fill="#161616"/>
+  </g>
+  <path d="M42.79 85.21A30 30 0 0 1 85.21 42.79Z" fill="#161616"/>
+  <path d="M85.21 42.79A30 30 0 0 1 42.79 85.21Z" fill="#ffffff"/>
+</svg>
